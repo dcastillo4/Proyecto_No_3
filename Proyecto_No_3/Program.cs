@@ -4,31 +4,33 @@ namespace Tarea3DesgloseDeDinero
 {
     internal class Program
     {
+        //metodo principal 
         static void Main(string[] args)
         {
+           //llamada al metodo del desglese de billites y monedas 
             fragmento();
         }
 
+
+        // inicio del metodo del desglese de billites y monedas 
         static void fragmento()
         {
             int C100, C50, C20, C10, C5, C1; //Declaracion para billetes
-            int M50, M25, M10, M5, M1;
-            decimal CAN;
-            double DOLARES, Q;
-            C100 = C50 = C20 = C10 = C5 = C1 = 0;
-            M50 = M25 = M10 = M5 = M1 = 0;
-            string linea, x;
-            float numDecimal;
+            int M50, M25, M10, M5, M1; // Declaracion para monedas 
+            decimal CAN;// declaracion de variable acceso a las cantidades 
+            double DOLARES, Q; //Declaracion para dolores 
+            C100 = C50 = C20 = C10 = C5 = C1 = 0;//Declaracion para billetes
+            M50 = M25 = M10 = M5 = M1 = 0; //Declaracion para monedas 
+            string linea, x; // declaracion de convercion de datos 
+            float numDecimal;// declaracion  de variable para extraer los decimales 
+            int options; // declaracion para obtener las opcion a eligir 
 
-
-            int options;
-
-
+            // capturando las opciones ingresadas por teclado 
             Console.WriteLine("Elija una Opcion: ");
             Console.WriteLine("Opcion 1:Desglose con Billetes Y Monedas. ");
             Console.WriteLine("Opcion 2:Cambios de Dolares a Quetzales");
-            x = Console.ReadLine();
-            options = int.Parse(x);
+            x = Console.ReadLine(); //capturando lo que ingrese por teclado 
+            options = int.Parse(x);//
 
             switch (options)
             {
@@ -37,7 +39,7 @@ namespace Tarea3DesgloseDeDinero
                     linea = Console.ReadLine();
                     CAN = decimal.Parse(linea);
                     string CANString = CAN.ToString();
-                    CAN = decimal.Parse(linea);
+                    
 
                     if ((CAN >= 100))
                     {
@@ -130,13 +132,13 @@ namespace Tarea3DesgloseDeDinero
                     Console.WriteLine("Ingrese una cantidad en Dolares: ");
                     linea = Console.ReadLine();
                     DOLARES = double.Parse(linea);
-                    Q = DOLARES * 7.72;
+                    Q = DOLARES * 7.72; // conversion de dolares ingresado por teclado a quetzales 
                     double quetzales;
                     Console.WriteLine("DOLARES: $." + DOLARES);
                     Console.WriteLine("******CAMBIO DE MONEDA******");
                     Console.WriteLine("Quetzales: Q." + Q);
 
-                    quetzales = double.Parse(Q.ToString());
+                    quetzales = double.Parse(Q.ToString()); 
                     CANString = Q.ToString();
 
                     if ((quetzales >= 100))
